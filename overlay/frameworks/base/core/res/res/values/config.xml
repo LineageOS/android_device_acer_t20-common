@@ -28,4 +28,7 @@
     <!-- True will enable the electron beam screen-off animation. -->
     <bool name="config_screenOffAnimation">false</bool>
 
+    <!-- Device has a h/w rotation lock switch -->
+    <bool name="config_hasRotationLockSwitch">true</bool>
+
 </resources>
