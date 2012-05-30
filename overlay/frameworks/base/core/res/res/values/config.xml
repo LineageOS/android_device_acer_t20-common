@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
+<<<<<<< HEAD
 ** Copyright 2011, The Android Open Source Project
+=======
+<<<<<<< HEAD
+** Copyright 2009, The Android Open Source Project
+=======
+** Copyright 2011, The Android Open Source Project
+>>>>>>> 1a01aaf... Disable Electron Beam Animation for now. It crashes surfaceflinger
+>>>>>>> Removed all software rotation locks via overlay
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -21,7 +29,10 @@
      for different hardware and product builds. -->
 <resources>
 
-<!-- True will enable the electron beam screen-off animation. -->
-<bool name="config_screenOffAnimation">false</bool>
+        <!-- True will enable the electron beam screen-off animation. -->
+        <bool name="config_screenOffAnimation">false</bool>
+
+    <!-- Device has a h/w rotation lock switch -->
+    <bool name="config_hasRotationLockSwitch">true</bool>
 
 </resources>
