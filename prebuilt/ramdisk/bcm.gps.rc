@@ -1,0 +1,9 @@
+# Download BCM gps lto data
+service bcmgps /system/bin/logwrapper /system/bin/bcmgps
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:init.svc.wpa_supplicant=running
+    start bcmgps

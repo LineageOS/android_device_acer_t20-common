@@ -4,7 +4,7 @@
 <hal
     acPortName="/dev/ttyHS1"
     lBaudRate="115200"
-    cLogEnabled="true"
+    cLogEnabled="false"
     acLogDirectory="/data/gps"
     ltoFileName="lto.dat"
     ctrlPipe="/data/gps/glgpsctrl"

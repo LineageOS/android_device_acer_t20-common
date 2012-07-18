@@ -5,14 +5,18 @@ include $(all-subdir-makefiles)
 include $(CLEAR_VARS)
 
 # generate init.<board>.rc
-TARGET_INITRC_FILES := device/acer/t20-common/prebuilt/ramdisk/init.t20.rc
+LOCAL_INITRC_FILES := device/acer/t20-common/prebuilt/ramdisk/init.t20.rc
 
-LOCAL_INIT_FILE := $(TARGET_ROOT_OUT)/init.$(TARGET_BOOTLOADER_BOARD_NAME).rc
+ifneq ($(filter $(CM_BUILD),a100 a200 a500),)
+    LOCAL_INITRC_FILES += device/acer/t20-common/prebuilt/ramdisk/bcm.gps.rc
+endif
 
-$(LOCAL_INIT_FILE): $(TARGET_INITRC_FILES)
+TARGET_INIT_FILE := $(TARGET_ROOT_OUT)/init.$(TARGET_BOOTLOADER_BOARD_NAME).rc
+
+$(TARGET_INIT_FILE): $(LOCAL_INITRC_FILES)
 	$(hide) echo "import init.$(TARGET_BOOTLOADER_BOARD_NAME).usb.rc" > $@
 	$(hide) cat $^ >> $@
 
-ALL_GENERATED_SOURCES += $(LOCAL_INIT_FILE)
+ALL_GENERATED_SOURCES += $(TARGET_INIT_FILE)
 
 endif

@@ -31,6 +31,8 @@ PRODUCT_PROPERTY_OVERRIDES := \
 
 ifneq ($(filter $(CM_BUILD),a100 a200 a500),)
     PRODUCT_PROPERTY_OVERRIDES += ro.dinfo.radio=Wifi
+    PRODUCT_COPY_FILES += \
+        $(LOCAL_PATH)/prebuilt/bin/bcmgps:/system/bin/bcmgps
 else
     PRODUCT_PROPERTY_OVERRIDES += ro.dinfo.radio=3G
 endif
